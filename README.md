@@ -1,1 +1,2 @@
-# RPI4-BT
+# RPI-BT
+Raspberry Pi BluetoothLibrary
