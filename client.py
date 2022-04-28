@@ -1,10 +1,10 @@
 import bt
 import time
 
-bt = bt.BT("basic")
+bt = bt.BT("client")
+
 bt.sync()
-time.sleep(1)
 
 while (1):
-    bt.send(bt.server, "hello")
+    bt.send(bt.rooster, "a")
     time.sleep(1)
