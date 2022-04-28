@@ -3,6 +3,7 @@ import bluetooth
 
 class BT():
     def __init__(self, hostname):
+        
         os.system("bluetoothctl discoverable on")
         
         mac_rpi0_samu = "B8:27:EB:48:52:95"    #RPI0
@@ -23,7 +24,9 @@ class BT():
             self.sync()
                 
         elif (hostname == "client"):
-            self.send(self.server, "asd")
+            en = False
+            while not en:
+                en = self.send(self.server, "asd")
             
         else:
             pass
@@ -50,8 +53,9 @@ class BT():
             sock.connect((targetBluetoothMacAddress, 1))
             sock.send(message)
             sock.close()
+            return True
         except:
-            print("FAILED TO SEND MESSAGE '" + str(message) + "' TO " + str(targetBluetoothMacAddress))
+            return False
         
     def sync(self):
         return self.receive()
