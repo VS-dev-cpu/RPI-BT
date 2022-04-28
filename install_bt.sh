@@ -1,5 +1,9 @@
-echo "Installing Libs for Bluetooth - DON'T USE"
+echo "Installing Libs for Bluetooth"
 
 sudo apt-get update
+
+sudo apt install git
+sudo apt install pip
+
 sudo apt-get install bluetooth bluez libbluetooth-dev
 sudo python3 -m pip install pybluez
