@@ -26,7 +26,7 @@ class BT():
         elif (hostname == "client"):
             en = False
             while not en:
-                en = self.send(self.server, "asd")
+                en = self.send(self.rooster, "asd")
             
         else:
             pass
