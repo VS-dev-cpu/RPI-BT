@@ -26,11 +26,19 @@ class BT():
             print("2 response")
             self.sync()
             print("3 response")
+            
+            sleep(4)
+            
+            self.start()
+            
+            sleep(1)
                
         elif (hostname == "client"):
             en = False
             while not en:
                 en = self.send(self.rooster, "asd")
+                
+            self.sync()
             
         else:
             pass
