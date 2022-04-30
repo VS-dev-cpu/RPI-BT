@@ -1,5 +1,6 @@
 import os
 import bluetooth
+from time import sleep
 
 class BT():
     def __init__(self, hostname):
@@ -24,8 +25,8 @@ class BT():
             print("1 response")
             self.sync()
             print("2 response")
-            self.sync()
-            print("3 response")
+            #self.sync()
+            #print("3 response")
             
             sleep(4)
             
