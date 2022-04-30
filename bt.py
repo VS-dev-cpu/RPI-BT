@@ -18,22 +18,18 @@ class BT():
         self.pig1 = mac_rpi4_samu
         self.pig2 = mac_rpi4_zeti
         self.pig3 = mac_rpi4_mate
+        
+        self.available = []
       
         if (hostname == "server"):
             print("waiting...")
-            self.sync()
-            print("1 response")
-            self.sync()
-            print("2 response")
-            #self.sync()
-            #print("3 response")
-            
-            sleep(4)
-            
+            for i in range(2):
+                addr, _ = self.sync()
+                self.available.append(addr)
+                print("response " + str(i) + " by " + str(addr))
+                        
             self.start()
-            
-            sleep(1)
-               
+                           
         elif (hostname == "client"):
             en = False
             while not en:
@@ -66,14 +62,15 @@ class BT():
             sock.connect((targetBluetoothMacAddress, 1))
             sock.send(message)
             sock.close()
+            print("Message " + str(message) + " sent to " + str(targetBluetoothMacAddress))
             return True
         except:
+            print("Failed to send message " + str(message) + " to " + str(targetBluetoothMacAddress))
             return False
         
     def sync(self):
         return self.receive()
 
     def start(self):
-        self.send(self.pig1, "start")
-        self.send(self.pig2, "start")
-        self.send(self.pig3, "start")
+        for i in self.available:
+            self.send(i, "go")
