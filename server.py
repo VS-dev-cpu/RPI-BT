@@ -1,12 +1,9 @@
 import bt
 import time
 
-print("waiting...")
 bt = bt.BT("server")
 
 time.sleep(2)
-
-print("go")
 
 bt.start()
 
