@@ -19,10 +19,14 @@ class BT():
         self.pig3 = mac_rpi4_mate
       
         if (hostname == "server"):
+            print("waiting...")
             self.sync()
+            print("1 response")
             self.sync()
+            print("2 response")
             self.sync()
-                
+            print("3 response")
+               
         elif (hostname == "client"):
             en = False
             while not en:
