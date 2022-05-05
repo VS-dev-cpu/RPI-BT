@@ -3,7 +3,7 @@ import bluetooth
 from time import sleep
 
 class BT():
-    def __init__(self, hostname):
+    def __init__(self):
         
         os.system("bluetoothctl discoverable on")
         
