@@ -1,8 +1,8 @@
 import bt
 import time
 
-bt = bt.BT("client")
+bt = bt.BT()
 
-while (1):
-    bt.send(bt.rooster, "a")
-    time.sleep(1)
+bt.sync()
+
+print("DONE")
