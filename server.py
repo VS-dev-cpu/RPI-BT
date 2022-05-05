@@ -1,8 +1,14 @@
 import bt
 import time
 
-bt = bt.BT("server")
+bt = bt.BT()
 
-while (1):
-    addr, a = bt.receive()
-    print("From " + str(addr) + " Received: " + str(a))
+print("WAITING...")
+
+time.sleep(10)
+
+print("STARTING...")
+
+bt.start()
+
+print("DONE")
