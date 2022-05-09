@@ -14,11 +14,6 @@ class BT():
         self.mac_rpi4_zeti = "DC:A6:32:78:BC:C7"    #RPI3
         self.mac_rpi4_mate = "DC:A6:32:25:D2:CC"    #RPI4
         
-        self.rooster = self.mac_rpi3_samu
-        self.pig1 = self.mac_rpi4_samu
-        self.pig2 = self.mac_rpi4_zeti
-        self.pig3 = self.mac_rpi4_mate
-    
     def receive(self):
         server_sock=bluetooth.BluetoothSocket( bluetooth.RFCOMM )
           
